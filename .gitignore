@@ -1,0 +1,7 @@
+# Vim stuff
+*.swp
+*.swo
+/Session.vim
+
+# Libraries
+/vendor
