@@ -19,28 +19,28 @@ class CreateCallsTable extends Migration
     {
         Schema::create("calls", function (Blueprint $table) {
             $table->id();
-            $table->string("clid");
-            $table->string("src");
-            $table->string("dialed");
-            $table->string("dst");
-            $table->string("dcontext");
-            $table->string("channel");
-            $table->string("dstchannel");
-            $table->string("lastapp");
-            $table->string("lastdata");
-            $table->datetime("start");
-            $table->datetime("answer");
-            $table->datetime("end");
+            $table->string("clid")->nullable();
+            $table->string("src")->nullable();
+            $table->string("dialed")->nullable();
+            $table->string("dst")->nullable();
+            $table->string("dcontext")->nullable();
+            $table->string("channel")->nullable();
+            $table->string("dstchannel")->nullable();
+            $table->string("lastapp")->nullable();
+            $table->string("lastdata")->nullable();
+            $table->datetime("start")->nullable();
+            $table->datetime("answer")->nullable();
+            $table->datetime("end")->nullable();
             $table->decimal("duration", 14, 4);
             $table->decimal("billsec", 14, 4);
-            $table->string("disposition");
-            $table->string("amaflags");
-            $table->string("accountcode");
-            $table->string("userfield");
-            $table->string("uniqueid");
-            $table->string("linkedid");
-            $table->integer("sequence");
-            $table->string("peeraccount");
+            $table->string("disposition")->nullable();
+            $table->string("amaflags")->nullable();
+            $table->string("accountcode")->nullable();
+            $table->string("userfield")->nullable();
+            $table->string("uniqueid")->nullable();
+            $table->string("linkedid")->nullable();
+            $table->integer("sequence")->nullable();
+            $table->string("peeraccount")->nullable();
 
             $table->index("start");
             $table->index("dst");

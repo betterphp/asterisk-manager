@@ -11,6 +11,7 @@ final class RouteRegistrar
     private static array $routes = [
         HealthCheckRoutes::class,
         UserRoutes::class,
+        CallsRoutes::class,
     ];
 
     /**
