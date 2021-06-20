@@ -13,6 +13,13 @@ final class RouteRegistrar
         UserRoutes::class,
     ];
 
+    /**
+     * Register all of the API routes with the framework
+     *
+     * @param Router $router The router instance
+     *
+     * @return void
+     */
     public static function registerAll(Router $router): void
     {
         foreach (static::$routes as $routes_class) {

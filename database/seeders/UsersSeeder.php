@@ -9,6 +9,11 @@ use Illuminate\Support\Facades\DB;
 
 class UsersSeeder extends Seeder
 {
+    /**
+     * Create test user accounts
+     *
+     * @retuen void
+     */
     public function run()
     {
         DB::table("users")->insert([

@@ -9,6 +9,11 @@ use Illuminate\Http\Request;
 
 abstract class Controller extends BaseController
 {
+    /**
+     * Creates a new instance of the controller
+     *
+     * @param Request $request The request
+     */
     public function __construct(protected Request $request)
     {
         //
