@@ -8,6 +8,8 @@ use Laravel\Lumen\Routing\Router;
 
 abstract class Routes
 {
+    public static bool $authenticated = true;
+
     final public function __construct(protected Router $router)
     {
         //

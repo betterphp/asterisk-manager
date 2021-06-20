@@ -8,3 +8,13 @@ services:
       - 127.0.0.1:8080:80
     volumes:
       - .:/var/www
+    environment:
+      APACHE_RUN_USER: "#1000"
+      APACHE_RUN_GROUP: "#1000"
+
+  database:
+    image: mysql:8.0.25
+    tmpfs: /var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: secret
+      MYSQL_DATABASE: asterisk

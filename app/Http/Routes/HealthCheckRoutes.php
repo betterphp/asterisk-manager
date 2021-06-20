@@ -8,6 +8,8 @@ use Illuminate\Http\JsonResponse;
 
 final class HealthCheckRoutes extends Routes
 {
+    public static bool $authenticated = false;
+
     public function register(): void
     {
         $this->router->get("/__health", fn (): JsonResponse => \response()->json([]));
