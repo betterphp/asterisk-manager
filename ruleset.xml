@@ -1,5 +1,6 @@
 <?xml version="1.0"?>
 <ruleset>
+    <file>./.phan</file>
     <file>./artisan</file>
     <file>./app</file>
     <file>./bootstrap</file>

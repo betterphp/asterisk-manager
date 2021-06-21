@@ -6,7 +6,9 @@ namespace App\Providers;
 
 use App\Models\User;
 use Illuminate\Support\Facades\Gate;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Http\Request;
 
 class AuthServiceProvider extends ServiceProvider
 {
@@ -27,12 +29,24 @@ class AuthServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $this->app["auth"]->viaRequest("api", function ($request) {
-            $token = $request->bearerToken() ?? null;
+        Auth::viaRequest("api", fn (Request $request): ?User => (
+            $this->getUserFromRequest($request)
+        ));
+    }
 
-            return (\is_string($token))
-                ? User::where("api_key", $token)->first()
-                : null;
-        });
+    /**
+     * Gets the current user from the request headers
+     *
+     * @param Request $request The request
+     *
+     * @return User|null
+     */
+    private function getUserFromRequest(Request $request): ?User
+    {
+        $token = $request->bearerToken() ?? null;
+
+        return (\is_string($token))
+            ? User::where("api_key", $token)->first()
+            : null;
     }
 }

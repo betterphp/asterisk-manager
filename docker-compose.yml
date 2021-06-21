@@ -4,6 +4,7 @@ services:
   api:
     build:
       context: .
+      target: app
     ports:
       - 127.0.0.1:8080:80
     volumes:
@@ -11,6 +12,19 @@ services:
     environment:
       APACHE_RUN_USER: "#1000"
       APACHE_RUN_GROUP: "#1000"
+
+  cli:
+    build:
+      context: .
+      target: cli
+    volumes:
+      - .:/var/www
+      - ~:/home/user
+    command:
+      - php
+    user: 1000:1000
+    environment:
+      HOME: /home/user
 
   database:
     image: mysql:8.0.25

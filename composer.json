@@ -8,9 +8,10 @@
     },
     "require-dev": {
         "fakerphp/faker": "^1.9.1",
+        "phan/phan": "^4.0",
         "phpunit/phpunit": "^9.3",
-        "squizlabs/php_codesniffer": "^3.6.0",
-        "slevomat/coding-standard": "^6.4"
+        "slevomat/coding-standard": "^6.4",
+        "squizlabs/php_codesniffer": "^3.6.0"
     },
     "autoload": {
         "psr-4": {
@@ -32,6 +33,7 @@
     "minimum-stability": "dev",
     "prefer-stable": true,
     "scripts": {
-        "lint": "phpcs --standard=ruleset.xml -p -s"
+        "lint": "phpcs --standard=ruleset.xml -p -s",
+        "analyse": "phan"
     }
 }
