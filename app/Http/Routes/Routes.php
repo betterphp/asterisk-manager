@@ -8,6 +8,11 @@ use Laravel\Lumen\Routing\Router;
 
 abstract class Routes
 {
+    /**
+     * Defines if the routes require authentication
+     *
+     * @var bool
+     */
     public static bool $authenticated = true;
 
     /**

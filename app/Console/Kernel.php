@@ -5,14 +5,16 @@ declare(strict_types=1);
 namespace App\Console;
 
 use Illuminate\Console\Scheduling\Schedule;
+use Illuminate\Console\Command;
 use Laravel\Lumen\Console\Kernel as ConsoleKernel;
 
 class Kernel extends ConsoleKernel
 {
     /**
-     * The Artisan commands provided by your application.
+     * List of commands provided by the application
      *
      * @var array
+     * @phan-var list<class-string<Command>>
      */
     protected $commands = [
         //
@@ -21,7 +23,8 @@ class Kernel extends ConsoleKernel
     /**
      * Define the application's command schedule.
      *
-     * @param  \Illuminate\Console\Scheduling\Schedule  $schedule
+     * @param Schedule $schedule The scheduler
+     *
      * @return void
      */
     protected function schedule(Schedule $schedule)

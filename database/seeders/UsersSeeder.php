@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
-use Illuminate\Support\Facades\DB;
 use App\Models\User;
 
 class UsersSeeder extends Seeder
@@ -15,7 +14,7 @@ class UsersSeeder extends Seeder
      *
      * @retuen void
      */
-    public function run()
+    public function run(): void
     {
         User::factory()->create([
             "name" => "Test User",

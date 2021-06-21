@@ -16,6 +16,14 @@ return [
     ],
 
     "plugins" => [
+        "DuplicateConstantPlugin",
+        "SleepCheckerPlugin",
+        "NotFullyQualifiedUsagePlugin",
+        "AvoidableGetterPlugin",
+        "InvalidVariableIssetPlugin",
+        "NonBoolBranchPlugin",
+        "NonBoolInLogicalArithPlugin",
+        "UnknownClassElementAccessPlugin",
         "AlwaysReturnPlugin",
         "DollarDollarPlugin",
         "UnreachableCodePlugin",
@@ -49,5 +57,6 @@ return [
 
     "suppress_issue_types" => [
         "PhanPluginNoCommentOnClass",
+        "PhanPluginRedundantReturnComment",
     ],
 ];

@@ -9,12 +9,19 @@ use Illuminate\Database\Eloquent\Factories\Factory;
 
 class CallFactory extends Factory
 {
+    /**
+     * The model that this factory will create instances of
+     *
+     * @var string
+     * @phan-var class-string<Call>
+     */
     protected $model = Call::class;
 
     /**
      * Gets the call definition
      *
      * @retuen array
+     * @phan-return array<string, mixed>
      */
     public function definition(): array
     {

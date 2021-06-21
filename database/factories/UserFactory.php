@@ -9,12 +9,19 @@ use Illuminate\Database\Eloquent\Factories\Factory;
 
 class UserFactory extends Factory
 {
+    /**
+     * The model that this factory will create instances of
+     *
+     * @var string
+     * @phan-var class-string<User>
+     */
     protected $model = User::class;
 
     /**
      * Get the user definition
      *
      * @return array
+     * @phan-return array<string, mixed>
      */
     public function definition(): array
     {

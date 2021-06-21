@@ -4,6 +4,7 @@ JSON API and config management for my Asterisk VoIP server. Quite specific to
 my setup and unlikely to be much use to anyone else :)
 
 ## Build
+
 To set up a local version of the API using docker
 
 ```
@@ -23,4 +24,13 @@ Static analysis with Phan
 
 ```
 docker-composer run cli composer analyse
+```
+
+## Database
+
+To populate the local database run
+
+```
+docker-compose exec api php artisan migrate:fresh
+docker-compose exec api php artisan db:seed
 ```

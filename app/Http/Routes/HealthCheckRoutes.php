@@ -8,6 +8,11 @@ use App\Http\Controllers\HealthCheckController;
 
 final class HealthCheckRoutes extends Routes
 {
+    /**
+     * Specify that the health check endpoints don't need authentication
+     *
+     * @var bool
+     */
     public static bool $authenticated = false;
 
     /**

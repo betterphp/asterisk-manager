@@ -3,13 +3,16 @@
 
 declare(strict_types=1);
 
+require_once __DIR__ . "/vendor/autoload.php";
+require_once __DIR__ . "/bootstrap/app.php";
+
 use Symfony\Component\Console\Input\ArgvInput;
 use Symfony\Component\Console\Output\ConsoleOutput;
 
-$app = require __DIR__ . '/bootstrap/app.php';
+$app = \createApp();
 
 $kernel = $app->make(
-    'Illuminate\Contracts\Console\Kernel'
+    "Illuminate\Contracts\Console\Kernel"
 );
 
 exit($kernel->handle(new ArgvInput, new ConsoleOutput));

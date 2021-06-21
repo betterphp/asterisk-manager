@@ -16,6 +16,11 @@ class User extends AppModel implements AuthenticatableContract, AuthorizableCont
     use Authorizable;
     use HasFactory;
 
+    /**
+     * List of date fields on the model
+     *
+     * @var string[]
+     */
     protected $dates = [
         "last_accessed",
     ];

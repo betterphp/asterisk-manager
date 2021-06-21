@@ -8,6 +8,12 @@ use Laravel\Lumen\Routing\Router;
 
 final class RouteRegistrar
 {
+    /**
+     * List of route classes to register
+     *
+     * @var string[]
+     * @phan-var list<class-string<Routes>>
+     */
     private static array $routes = [
         HealthCheckRoutes::class,
         UserRoutes::class,
@@ -30,7 +36,7 @@ final class RouteRegistrar
 
             $router->group(
                 ["middleware" => $middleware],
-                function (Router $router) use ($routes_class) {
+                function (Router $router) use ($routes_class): void {
                     $routes = new $routes_class($router);
                     $routes->register();
                 },

@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace App\Providers;
 
 use App\Models\User;
-use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Http\Request;
@@ -27,7 +26,7 @@ class AuthServiceProvider extends ServiceProvider
      *
      * @return void
      */
-    public function boot()
+    public function boot(): void
     {
         Auth::viaRequest("api", fn (Request $request): ?User => (
             $this->getUserFromRequest($request)
@@ -46,7 +45,7 @@ class AuthServiceProvider extends ServiceProvider
         $token = $request->bearerToken() ?? null;
 
         return (\is_string($token))
-            ? User::where("api_key", $token)->first()
+            ? User::query()->where("api_key", $token)->first()
             : null;
     }
 }

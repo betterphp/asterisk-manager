@@ -2,41 +2,45 @@
 
 declare(strict_types=1);
 
-require_once __DIR__ . "/../vendor/autoload.php";
+use Laravel\Lumen\Application;
+use Laravel\Lumen\Bootstrap\LoadEnvironmentVariables;
 
-(new Laravel\Lumen\Bootstrap\LoadEnvironmentVariables(
-    \dirname(__DIR__)
-))->bootstrap();
+/**
+ * Create an instance of the application
+ *
+ * @return Application
+ */
+function createApp(): Application
+{
+    (new LoadEnvironmentVariables(\dirname(__DIR__)))->bootstrap();
 
-\date_default_timezone_set(env("APP_TIMEZONE", "UTC"));
+    \date_default_timezone_set(env("APP_TIMEZONE", "UTC"));
 
-$app = new Laravel\Lumen\Application(
-    \dirname(__DIR__)
-);
+    $app = new Application(\dirname(__DIR__));
 
-$app->withFacades();
-$app->withEloquent();
+    $app->withFacades();
+    $app->withEloquent();
 
-$app->singleton(
-    Illuminate\Contracts\Debug\ExceptionHandler::class,
-    App\Exceptions\Handler::class
-);
+    $app->singleton(
+        Illuminate\Contracts\Debug\ExceptionHandler::class,
+        App\Exceptions\Handler::class
+    );
 
-$app->singleton(
-    Illuminate\Contracts\Console\Kernel::class,
-    App\Console\Kernel::class
-);
+    $app->singleton(
+        Illuminate\Contracts\Console\Kernel::class,
+        App\Console\Kernel::class
+    );
 
-$app->configure("app");
+    $app->configure("app");
 
-$app->routeMiddleware([
-    "auth" => App\Http\Middleware\Authenticate::class,
-]);
+    $app->routeMiddleware([
+        "auth" => App\Http\Middleware\Authenticate::class,
+    ]);
 
-$app->register(App\Providers\AppServiceProvider::class);
-$app->register(App\Providers\AuthServiceProvider::class);
-$app->register(App\Providers\EventServiceProvider::class);
+    $app->register(App\Providers\AppServiceProvider::class);
+    $app->register(App\Providers\AuthServiceProvider::class);
 
-App\Http\Routes\RouteRegistrar::registerAll($app->router);
+    App\Http\Routes\RouteRegistrar::registerAll($app->router);
 
-return $app;
+    return $app;
+}
