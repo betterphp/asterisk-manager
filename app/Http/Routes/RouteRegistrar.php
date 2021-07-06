@@ -18,6 +18,7 @@ final class RouteRegistrar
         HealthCheckRoutes::class,
         UserRoutes::class,
         CallsRoutes::class,
+        EndpointRoutes::class,
     ];
 
     /**

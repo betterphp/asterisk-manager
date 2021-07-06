@@ -12,7 +12,7 @@ class UsersSeeder extends Seeder
     /**
      * Create test user accounts
      *
-     * @retuen void
+     * @return void
      */
     public function run(): void
     {
