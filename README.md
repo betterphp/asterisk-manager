@@ -26,6 +26,12 @@ Static analysis with Phan
 docker-composer run cli composer analyse
 ```
 
+Tests with PHPUnit
+
+```
+docker-compose run cli composer test
+```
+
 ## Database
 
 To populate the local database run

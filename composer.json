@@ -34,6 +34,7 @@
     "prefer-stable": true,
     "scripts": {
         "lint": "phpcs --standard=ruleset.xml -p -s",
-        "analyse": "phan"
+        "analyse": "phan",
+        "test": "phpdbg -qrr vendor/bin/phpunit -p"
     }
 }
