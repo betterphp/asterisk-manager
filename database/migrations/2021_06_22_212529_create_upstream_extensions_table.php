@@ -15,9 +15,9 @@ class CreateUpstreamExtensionsTable extends Migration
      *
      * @return void
      */
-    public function up()
+    public function up(): void
     {
-        Schema::create("upstream_extensions", function (Blueprint $table) {
+        Schema::create("upstream_extensions", function (Blueprint $table): void {
             $table->id();
             $table->timestamps();
             $table->string("display_name");
@@ -35,7 +35,7 @@ class CreateUpstreamExtensionsTable extends Migration
      *
      * @return void
      */
-    public function down()
+    public function down(): void
     {
         Schema::dropIfExists("upstream_extensions");
     }

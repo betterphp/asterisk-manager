@@ -15,9 +15,9 @@ class CreateEndpointsTable extends Migration
      *
      * @return void
      */
-    public function up()
+    public function up(): void
     {
-        Schema::create("endpoints", function (Blueprint $table) {
+        Schema::create("endpoints", function (Blueprint $table): void {
             $table->id();
             $table->timestamps();
             $table->string("display_name");
@@ -32,7 +32,7 @@ class CreateEndpointsTable extends Migration
      *
      * @return void
      */
-    public function down()
+    public function down(): void
     {
         Schema::dropIfExists("endpoints");
     }
