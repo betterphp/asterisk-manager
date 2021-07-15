@@ -35,6 +35,6 @@
     "scripts": {
         "lint": "phpcs --standard=ruleset.xml -p -s",
         "analyse": "phan",
-        "test": "phpdbg -qrr vendor/bin/phpunit -p"
+        "test": "phpdbg -qrr vendor/bin/phpunit"
     }
 }

@@ -1,0 +1,1 @@
+{"version":1,"defects":{"Tests\\Http\\Controllers\\CallsControllerTest::testGet":3,"Tests\\Http\\Controllers\\UserControllerTest::testGet":4},"times":{"Tests\\Http\\Controllers\\CallsControllerTest::testGet":1.241,"Tests\\Http\\Controllers\\UserControllerTest::testGet":0.564}}

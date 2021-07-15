@@ -24,4 +24,13 @@ class User extends AppModel implements AuthenticatableContract, AuthorizableCont
     protected $dates = [
         "last_accessed",
     ];
+
+    /**
+     * List of fields to exclude from the models json form
+     *
+     * @var string[]
+     */
+    protected $hidden = [
+        "api_key",
+    ];
 }

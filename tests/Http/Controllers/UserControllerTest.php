@@ -15,6 +15,9 @@ class UserControllerTest extends TestCase
 
         $this->actingAs($user)
              ->get("/user")
-             ->seeJson([]);
+             ->seeJson([
+                 "id" => $user->id,
+                 "name" => $user->name,
+             ]);
     }
 }

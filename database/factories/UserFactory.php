@@ -27,6 +27,7 @@ class UserFactory extends Factory
     {
         return [
             "name" => $this->faker->name,
+            "api_key" => $this->faker->sha1,
         ];
     }
 }
