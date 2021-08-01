@@ -10,6 +10,11 @@ use App\Models\UpstreamProvider;
 
 class UpstreamProvidersControllerTest extends TestCase
 {
+    /**
+     * Tests that the upstream providers endpoint returns the correct data
+     *
+     * @return void
+     */
     public function testGet(): void
     {
         $user = User::first();

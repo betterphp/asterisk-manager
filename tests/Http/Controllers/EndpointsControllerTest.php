@@ -10,10 +10,15 @@ use App\Models\User;
 
 class EndpointsControllerTest extends TestCase
 {
+    /**
+     * Tests the the endpoints endpoint returns the correct data
+     *
+     * @return void
+     */
     public function testGet(): void
     {
         $user = User::first();
-        $endpoints = Endpoint::get();
+        $endpoints = Endpoint::query()->get();
 
         $this->actingAs($user)
              ->get("/endpoints");

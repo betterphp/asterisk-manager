@@ -10,10 +10,15 @@ use App\Models\User;
 
 class CallsControllerTest extends TestCase
 {
+    /**
+     * Tests that the calls endpoint returns the correct data
+     *
+     * @return void
+     */
     public function testGet(): void
     {
         $user = User::first();
-        $calls = Call::get();
+        $calls = Call::query()->get();
 
         $this->actingAs($user)
              ->get("/calls");
