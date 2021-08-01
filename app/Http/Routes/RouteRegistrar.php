@@ -19,6 +19,7 @@ final class RouteRegistrar
         UserRoutes::class,
         CallsRoutes::class,
         EndpointRoutes::class,
+        UpstreamProviderRoutes::class,
     ];
 
     /**

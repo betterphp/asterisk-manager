@@ -12,19 +12,20 @@ class CallsControllerTest extends TestCase
 {
     public function testGet(): void
     {
-        $user = User::factory()->create();
-        $call = Call::factory()->create();
+        $user = User::first();
+        $calls = Call::get();
 
         $this->actingAs($user)
-             ->get("/calls")
-             ->seeJson([
-                 "current_page" => 1,
-                 "total" => 1,
-                 "data" => [
-                     [
-                         "id" => $call->id,
-                     ],
-                 ]
-             ]);
+             ->get("/calls");
+
+        $this->response->assertJson([
+            "current_page" => 1,
+            "total" => $calls->count(),
+            "data" => [
+                [
+                    "id" => $calls->first()->id,
+                ],
+            ],
+        ]);
     }
 }

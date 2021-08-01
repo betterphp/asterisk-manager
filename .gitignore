@@ -5,3 +5,6 @@
 
 # Libraries
 /vendor
+
+# PHPUnit cache file
+/.phpunit.result.cache
