@@ -58,5 +58,6 @@ return [
     "suppress_issue_types" => [
         "PhanPluginNoCommentOnClass",
         "PhanPluginRedundantReturnComment",
+        "PhanTypeInvalidCallableArraySize",
     ],
 ];
